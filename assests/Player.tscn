@@ -1,0 +1,266 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/Player.cs" type="Script" id=1]
+[ext_resource path="res://assests/voxel-pack/PNG/Characters/Player male/male_head.png" type="Texture" id=2]
+[ext_resource path="res://assests/voxel-pack/PNG/Characters/Player male/male_arm.png" type="Texture" id=3]
+[ext_resource path="res://assests/voxel-pack/PNG/Characters/Player male/male_leg.png" type="Texture" id=4]
+[ext_resource path="res://assests/voxel-pack/PNG/Characters/Player male/male_body.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29, 26.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33, 32 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 22, 29 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Walking"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MaleLeg1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -45.0, 0.0, 45.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MaleLeg2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 0.0, -45.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MaleArm:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 0.0, -45.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MaleBody:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.0, 0.0, -5.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MaleLeg1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MaleLeg2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MaleArm:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "duck"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("MaleBody:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MaleArm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, -23 ), Vector2( -42, 25 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MaleHead:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -60 ), Vector2( -50, -15 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HeadColader:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, -60 ), Vector2( -50, -15 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "walking"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MaleLeg1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -45.0, 0.0, 45.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MaleLeg2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 0.0, -45.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MaleArm:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 0.0, -45.0 ]
+}
+
+[node name="Player" type="RigidBody2D"]
+position = Vector2( 501, 290 )
+mode = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MaleBody" type="Sprite" parent="."]
+position = Vector2( 0, 29 )
+texture = ExtResource( 5 )
+offset = Vector2( 1, -28 )
+
+[node name="MaleHead" type="Sprite" parent="."]
+position = Vector2( 0, -60 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="MaleLeg1" type="Sprite" parent="."]
+position = Vector2( -3.19481e-05, 26 )
+scale = Vector2( 1.03571, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( 3.05176e-05, 26 )
+
+[node name="MaleLeg2" type="Sprite" parent="."]
+position = Vector2( 0, 26 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 26 )
+
+[node name="MaleArm" type="Sprite" parent="."]
+position = Vector2( 1, -23 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, 28 )
+
+[node name="LegColader1" type="CollisionShape2D" parent="."]
+position = Vector2( 14, 53 )
+shape = SubResource( 1 )
+
+[node name="HeadColader" type="CollisionShape2D" parent="."]
+position = Vector2( -1, -60 )
+shape = SubResource( 2 )
+
+[node name="BodyColader" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 1 )
+shape = SubResource( 3 )
+
+[node name="walking" type="AnimationPlayer" parent="."]
+autoplay = "Walking"
+playback_speed = 1.5
+anims/Walking = SubResource( 4 )
+
+[node name="jump" type="AnimationPlayer" parent="."]
+playback_speed = 0.8
+anims/jump = SubResource( 5 )
+
+[node name="duck" type="AnimationPlayer" parent="."]
+anims/duck = SubResource( 6 )
+
+[node name="duckWalking" type="AnimationPlayer" parent="."]
+playback_speed = 1.5
+anims/walking = SubResource( 7 )
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Player_body_exited"]
